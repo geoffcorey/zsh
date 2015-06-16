@@ -76,9 +76,10 @@ alias less='less --RAW-CONTROL-CHARS'
 export LS_OPTS='--color=auto'
 alias ls='ls ${LS_OPTS}'
 # GoLang
-if [[ -d /usr/local/go ]]; then
-  export GOROOT=/usr/local/go
+if [[ -d ~/go ]]; then
+  export GOROOT=~/go
   export PATH=$PATH:$GOROOT/bin
+	export GOPATH=~
 fi
 # Node.js nvm 
 [[ -d ~/.nvm ]] && source ~/.nvm/nvm.sh
