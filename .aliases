@@ -42,6 +42,8 @@ alias D='cd ~/Downloads'
 # Docker
 #
 alias diclean='docker images | grep '\''<none>'\'' | grep -P '\''[1234567890abcdef]{12}'\'' -o | xargs -L1 docker rmi'
+alias dkillall='docker ps -a | grep -v CONTAINER | awk '\''{ print $1 }'\'' | xargs docker kill '
+alias drmall='docker ps -a | grep -v CONTAINER | awk '\''{ print $1 }'\'' | xargs docker rm '
 #
 # Network
 #
