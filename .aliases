@@ -87,6 +87,7 @@ alias irc='weechat-curses'
 #
 export TMUX_POWERLINE_SEG_WEATHER_LOCATION="2478307"
 export TMUX_POWERLINE_SEG_WEATHER_UNIT_DEFAULT="f"
+alias tmuxhelp='more ~/.tmux/tmux.help'
 #
 # Include custom aliases
 #
