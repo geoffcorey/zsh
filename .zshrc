@@ -87,6 +87,9 @@ fi
 # Ruby RVM
 source $HOME/.rvm/scripts/rvm
 
+# External IP
+external-ip -r
+
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
