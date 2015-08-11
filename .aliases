@@ -99,15 +99,6 @@ function duckduckgo {
 }
 alias '?'='duckduckgo'
 #
-# Stack Overflow 
-#
-function stackoverflow {
-	query=`echo "!so $*" | sed -f ~/bin/url_escape.sed`
-	echo $query
-  lynx 'https://duckduckgo.com/?q='$query
-}
-alias 'so'='stackoverflow'
-#
 # Include custom aliases
 #
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
