@@ -50,6 +50,8 @@ alias drmall='docker ps -a | grep -v CONTAINER | awk '\''{ print $1 }'\'' | xarg
 alias dumpmongo="sudo tcpdump -nnXSs 0 'port 27017'"
 alias linkstatus="awk '{ split(FILENAME, array, "/"); print array[5] ": " $1 }' $(find /sys/class/net/*/operstate ! -type d)"
 alias wifistrength="awk 'NR==3 {print \"WiFi Signal Strength = \" \$3 \"00 %\"}''' /proc/net/wireless"
+alias ngrep="sudo ngrep -l -q -d eth0 \"^GET |^POST \" tcp and port 80"
+
 # GIT
 #
 # Scripts
@@ -88,6 +90,23 @@ alias irc='weechat-curses'
 export TMUX_POWERLINE_SEG_WEATHER_LOCATION="2478307"
 export TMUX_POWERLINE_SEG_WEATHER_UNIT_DEFAULT="f"
 alias tmuxhelp='more ~/.tmux/tmux.help'
+#
+# DuckDuckGo
+#
+function duckduckgo {
+	query=`echo $* | sed -f ~/bin/url_escape.sed`
+  lynx 'https://duckduckgo.com/?q='$query
+}
+alias '?'='duckduckgo'
+#
+# Stack Overflow 
+#
+function stackoverflow {
+	query=`echo "!so $*" | sed -f ~/bin/url_escape.sed`
+	echo $query
+  lynx 'https://duckduckgo.com/?q='$query
+}
+alias 'so'='stackoverflow'
 #
 # Include custom aliases
 #
