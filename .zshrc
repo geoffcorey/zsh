@@ -13,7 +13,7 @@ done
 setopt auto_cd
 
 # use vim as the visual editor
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR=$VISUAL
 
 # vi mode
