@@ -46,6 +46,11 @@ alias diclean='docker images | grep '\''<none>'\'' | grep -P '\'' [1234567890abc
 alias dkillall='docker ps -a | grep -v CONTAINER | awk '\'' { print $1 } '\'' | xargs docker kill '
 alias drmall='docker ps -a | grep -v CONTAINER | awk '\'' { print $1 } '\'' | xargs docker rm '
 #
+# GO Lang
+#
+alias setgopath='export GOPATH=`pwd`'
+alias lsgodeps="go list -f '{{join .Deps \"\n\"}}' | xargs go list -f '{{if not .Standard}}{{.ImportPath}}{{end}}' "
+#
 # Network
 #
 alias dumpmongo="sudo tcpdump -nnXSs 0 ' port 27017 '"
