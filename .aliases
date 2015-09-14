@@ -46,6 +46,12 @@ alias diclean='docker images | grep '\''<none>'\'' | grep -P '\'' [1234567890abc
 alias dkillall='docker ps -a | grep -v CONTAINER | awk '\'' { print $1 } '\'' | xargs docker kill '
 alias drmall='docker ps -a | grep -v CONTAINER | awk '\'' { print $1 } '\'' | xargs docker rm '
 #
+#
+#
+alias eshealth="curl 'localhost:9200/_cat/health?v'"
+alias esnodes="curl 'localhost:9200/_cat/nodes?v'"
+alias esindices="curl 'localhost:9200/_cat/indices?v'"
+#
 # GO Lang
 #
 alias setgopath='export GOPATH=`pwd`'
