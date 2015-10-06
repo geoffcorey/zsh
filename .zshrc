@@ -73,7 +73,9 @@ export TERM=xterm-256color
 export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1
 alias less='less --RAW-CONTROL-CHARS'
-export LS_OPTS='--color=auto'
+if [[ `uname` == "Linux" ]]; then
+  export LS_OPTS='--color=auto'
+fi
 alias ls='ls ${LS_OPTS}'
 # GoLang
 if [[ -d ~/go ]]; then
@@ -88,7 +90,7 @@ fi
 source $HOME/.rvm/scripts/rvm
 
 # External IP
-external-ip -r
+~/bin/external-ip -r
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
