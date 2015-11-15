@@ -13,7 +13,7 @@ done
 setopt auto_cd
 
 # use vim as the visual editor
-export VISUAL=nvim
+export VISUAL=vim
 export EDITOR=$VISUAL
 
 # vi mode
@@ -99,3 +99,5 @@ source $HOME/.rvm/scripts/rvm
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 [[ -d ~/bin ]] && export PATH=$PATH:~/bin
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

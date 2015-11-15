@@ -1,5 +1,5 @@
 # Unix
-export VISUAL=nvim
+export VISUAL=vim
 alias tlf= "tail -f"
 alias ln='ln -v'
 alias mkdir='mkdir -p'
@@ -38,7 +38,6 @@ alias lsTrash='ls ~/.local/share/Trash/files/'
 alias cdTrash='cd ~/.local/share/Trash/files/'
 alias lD='ls ~/Downloads'
 alias D='cd ~/Downloads'
-alias vim='nvim'
 #
 # GIT
 #
