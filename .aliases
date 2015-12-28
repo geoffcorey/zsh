@@ -13,6 +13,7 @@ alias -g ONE= "| awk '{ print \$1}'"
 alias e="$EDITOR"
 alias v="$VISUAL"
 alias vi="$VISUAL"
+alias grep="grep --color=auto"
 #
 # Directories
 #
@@ -67,6 +68,22 @@ alias dumpmongo="sudo tcpdump -nnXSs 0 ' port 27017 '"
 #alias linkstatus="awk ' { split(FILENAME, array, "/"); print array[5] ": " $1 } ' $(find /sys/class/net/*/operstate ! -type d)"
 #alias wifistrength="awk ' NR == 3 { print\ "WiFi Signal Strength=\" \$3 \"00 %\"}''' /proc/net/wireless"
 alias ngrep="sudo ngrep -l -q -d eth0 \"^GET |^POST \" tcp and port 80"
+alias ports='netstat -tulanp'
+#
+# iptables 
+#
+alias ipt='sudo /sbin/iptables'
+alias iptlist='sudo /sbin/iptables -L -n -v --line-numbers'
+alias iptlistin='sudo /sbin/iptables -L INPUT -n -v --line-numbers'
+alias iptlistout='sudo /sbin/iptables -L OUTPUT -n -v --line-numbers'
+alias iptlistfw='sudo /sbin/iptables -L FORWARD -n -v --line-numbers'
+alias firewall=iptlist
+#
+# Debian / Ubuntu
+#
+alias apt-get='sudo apt-get'
+alias updatey='sudo apt-get --yes'
+alias update='sudo apt-get update && sudo apt-get upgrade'
 #
 # Term Scripts
 #

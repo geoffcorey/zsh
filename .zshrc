@@ -70,7 +70,7 @@ setopt EXTENDED_GLOB
 
 # Colors
 export TERM=xterm-256color
-export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
+#export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
 export CLICOLOR=1
 alias less='less --RAW-CONTROL-CHARS'
 if [[ `uname` == "Linux" ]]; then
