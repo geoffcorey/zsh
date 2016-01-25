@@ -40,6 +40,10 @@ setopt prompt_subst
 # prompt
 export PS1='[${SSH_CONNECTION+"%n@%m:"}%~] '
 # GIT PROMPT
+if [[ ! -f ~/src/github.com/olivierverdier/zsh-git-prompt/zshrc.sh ]]; then
+  mkdir -p ~/src/github.com/olivierverdier/zsh-git-prompt
+  git clone git@github.com:olivierverdier/zsh-git-prompt.git ~/src/github.com/olivierverdier/zsh-git-prompt
+fi
 source ~/src/github.com/olivierverdier/zsh-git-prompt/zshrc.sh
 PROMPT='%B%m%~%b$(git_super_status) %# '
 # ignore duplicate history entries
@@ -87,7 +91,7 @@ fi
 [[ -d ~/.nvm ]] && source ~/.nvm/nvm.sh
 
 # Ruby RVM
-source $HOME/.rvm/scripts/rvm
+[[ -d ~/.rvm ]] && source $HOME/.rvm/scripts/rvm
 
 # External IP
 ~/bin/external-ip -r
