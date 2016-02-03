@@ -140,3 +140,4 @@ alias ignorelidswitch="systemd-inhibit --what=handle-lid-switch sleep 2592000 &"
 #
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
 alias prettyjson='python -m json.tool'
+alias lockit='i3lock -t -i ~/.i3/tile.png'
