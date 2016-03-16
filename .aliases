@@ -46,10 +46,12 @@ alias gitgraph="git log --graph --simplify-by-decoration --pretty=format:'%d' --
 #
 # Docker
 #
+function __docker-shell { docker exec -it $1 bash }
+alias docker-shell='__docker-shell'
 #alias docker-clean-untagged="docker rmi $(docker images | grep '^<none>' | awk '{print $3}')"
 #alias docker-clean-untagged='docker images | grep '\''<none>'\'' | grep -P '\'' [1234567890abcdef] { 12 } '\'' -o | xargs -L1 docker rmi '
-alias docker-killall='docker ps -a | grep -v CONTAINER | awk '\'' { print $1 } '\'' | xargs docker kill '
-alias docker-remove-all='docker ps -a | grep -v CONTAINER | awk '\'' { print $1 } '\'' | xargs docker rm '
+alias docker-kill-all-containers='docker ps -a | grep -v CONTAINER | awk '\'' { print $1 } '\'' | xargs docker kill '
+alias docker-remove-all-containers='docker ps -a | grep -v CONTAINER | awk '\'' { print $1 } '\'' | xargs docker rm '
 alias docker-remove-all-images='docker rmi $(docker images -q)'
 #
 #
