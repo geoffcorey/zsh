@@ -37,6 +37,17 @@ bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 # expand functions in the prompt
 setopt prompt_subst
 
+# Use Plaidchat if available
+if [[ -f ~/.nvm/versions/node/v6.2.2/bin/plaidchat ]]; then
+  alias slack="plaidchat >/dev/null 2>/dev/null &"
+fi
+
+fi
+# use NeoVim if it exists
+if [[ -f /usr/bin/nvim ]]; then
+  alias vi=/usr/bin/nvim
+  alias vim=/usr/bin/nvim
+fi
 # prompt
 export PS1='[${SSH_CONNECTION+"%n@%m:"}%~] '
 # GIT PROMPT
