@@ -16,6 +16,13 @@ setopt auto_cd
 export VISUAL=vim
 export EDITOR=$VISUAL
 
+# Ruby RVM
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
+  source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+  rvm use ruby-2.3.0 --default
+fi
+
 # vi mode
 bindkey -v
 bindkey "^F" vi-cmd-mode
@@ -100,12 +107,11 @@ fi
 # Node.js nvm 
 [[ -d ~/.nvm ]] && source ~/.nvm/nvm.sh
 
-# Ruby RVM
-
 # External IP
 ~/bin/external-ip -r
 
 # aliases
+# [[ -f ~/.profile ]] && source ~/.profile
 [[ -f ~/.aliases ]] && source ~/.aliases
 
 # Local config
@@ -116,4 +122,3 @@ fi
 # added by travis gem
 [ -f /home/gwcorey/.travis/travis.sh ] && source /home/gwcorey/.travis/travis.sh
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
