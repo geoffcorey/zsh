@@ -91,7 +91,6 @@ fi
 [[ -d ~/.nvm ]] && source ~/.nvm/nvm.sh
 
 # Ruby RVM
-[[ -d ~/.rvm ]] && source $HOME/.rvm/scripts/rvm
 
 # External IP
 ~/bin/external-ip -r
@@ -104,7 +103,7 @@ fi
 
 [[ -d ~/bin ]] && export PATH=$PATH:~/bin
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 # added by travis gem
 [ -f /home/gwcorey/.travis/travis.sh ] && source /home/gwcorey/.travis/travis.sh
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
