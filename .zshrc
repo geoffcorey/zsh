@@ -42,7 +42,6 @@ if [[ -f ~/.nvm/versions/node/v6.2.2/bin/plaidchat ]]; then
   alias slack="plaidchat >/dev/null 2>/dev/null &"
 fi
 
-fi
 # use NeoVim if it exists
 if [[ -f /usr/bin/nvim ]]; then
   alias vi=/usr/bin/nvim
