@@ -17,11 +17,9 @@ export VISUAL=vim
 export EDITOR=$VISUAL
 
 # Ruby RVM
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
-  source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-  rvm use ruby-2.3.0 --default
-fi
+# if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
+  # rvm use ruby-2.3.0 --default
+# fi
 
 # vi mode
 bindkey -v
@@ -45,9 +43,9 @@ bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 setopt prompt_subst
 
 # Use Plaidchat if available
-if [[ -f ~/.nvm/versions/node/v6.2.2/bin/plaidchat ]]; then
-  alias slack="plaidchat >/dev/null 2>/dev/null &"
-fi
+# if [[ -f ~/.nvm/versions/node/v6.2.2/bin/plaidchat ]]; then
+  # alias slack="plaidchat >/dev/null 2>/dev/null &"
+# fi
 
 # use NeoVim if it exists
 if [[ -f /usr/bin/nvim ]]; then
@@ -104,6 +102,9 @@ if [[ -d ~/go ]]; then
   export PATH=$PATH:$GOROOT/bin
 	export GOPATH=~
 fi
+
+
+[[ -f ~/.aliases ]] && source ~/.aliases
 # Node.js nvm 
 [[ -d ~/.nvm ]] && source ~/.nvm/nvm.sh
 
@@ -111,7 +112,6 @@ fi
 ~/bin/external-ip -r
 
 # aliases
-# [[ -f ~/.profile ]] && source ~/.profile
 [[ -f ~/.aliases ]] && source ~/.aliases
 
 # Local config
@@ -121,4 +121,3 @@ fi
 
 # added by travis gem
 [ -f /home/gwcorey/.travis/travis.sh ] && source /home/gwcorey/.travis/travis.sh
-

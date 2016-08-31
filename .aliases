@@ -110,6 +110,7 @@ alias kT='killall transmission-daemon'
 #
 alias todo='$EDITOR ~/.todo'
 alias httpserve='python -m SimpleHTTPServer'
+alias filemgr='nautilus --no-desktop'
 #
 # News and Music
 #
