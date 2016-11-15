@@ -149,3 +149,4 @@ alias pa-output-sinks="pacmd list-sinks | grep -e 'name:' -e 'index'"
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
 alias prettyjson='python -m json.tool'
 alias lockit='i3lock -t -i ~/.i3/3monitor.png'
+alias jekyllserve="bundle exec jekyll serve"
