@@ -12,15 +12,6 @@ done
 # automatically enter directories without cd
 setopt auto_cd
 
-# use vim as the visual editor
-export VISUAL=vim
-export EDITOR=$VISUAL
-
-# Ruby RVM
-# if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then
-  # rvm use ruby-2.3.0 --default
-# fi
-
 # vi mode
 bindkey -v
 bindkey "^F" vi-cmd-mode
@@ -42,16 +33,6 @@ bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 # expand functions in the prompt
 setopt prompt_subst
 
-# Use Plaidchat if available
-# if [[ -f ~/.nvm/versions/node/v6.2.2/bin/plaidchat ]]; then
-  # alias slack="plaidchat >/dev/null 2>/dev/null &"
-# fi
-
-# use NeoVim if it exists
-if [[ -f /usr/bin/nvim ]]; then
-  alias vi=/usr/bin/nvim
-  alias vim=/usr/bin/nvim
-fi
 # prompt
 export PS1='[${SSH_CONNECTION+"%n@%m:"}%~] '
 # GIT PROMPT
@@ -87,24 +68,6 @@ setopt CORRECT CORRECT_ALL
 # Enable extended globbing
 setopt EXTENDED_GLOB
 
-# Colors
-export TERM=xterm-256color
-#export GREP_OPTIONS='--color=auto' GREP_COLOR='1;32'
-export CLICOLOR=1
-alias less='less --RAW-CONTROL-CHARS'
-if [[ `uname` == "Linux" ]]; then
-  export LS_OPTS='--color=auto'
-fi
-alias ls='ls ${LS_OPTS}'
-# GoLang
-if [[ -d ~/go ]]; then
-  export GOROOT=~/go
-  export PATH=$PATH:$GOROOT/bin
-	export GOPATH=~
-fi
-
-
-[[ -f ~/.aliases ]] && source ~/.aliases
 # Node.js nvm 
 [[ -d ~/.nvm ]] && source ~/.nvm/nvm.sh
 
@@ -114,10 +77,9 @@ fi
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
 
+# profile paths
+[[ -f ~/.profile ]] && source ~/.profile
+
 # Local config
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+[[ -f ~/.profile.local ]] && source ~/.profile.local
 
-[[ -d ~/bin ]] && export PATH=$PATH:~/bin
-
-# added by travis gem
-[ -f /home/gwcorey/.travis/travis.sh ] && source /home/gwcorey/.travis/travis.sh
