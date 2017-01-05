@@ -1,6 +1,6 @@
 # Unix
-export VISUAL=vim
-alias tlf= "tail -f"
+export VISUAL=nvim
+alias tlf='tail -f'
 alias ln='ln -v'
 alias mkdir='mkdir -p'
 alias l='ls'
@@ -46,13 +46,13 @@ alias gitgraph="git log --graph --simplify-by-decoration --pretty=format:'%d' --
 #
 # Docker
 #
-function __docker-shell { docker exec -it $1 bash }
-alias docker-shell='__docker-shell'
-#alias docker-clean-untagged="docker rmi $(docker images | grep '^<none>' | awk '{print $3}')"
-#alias docker-clean-untagged='docker images | grep '\''<none>'\'' | grep -P '\'' [1234567890abcdef] { 12 } '\'' -o | xargs -L1 docker rmi '
+# function __docker-shell { docker exec -it $1 bash }
+# alias docker-shell='__docker-shell'
+# alias docker-clean-untagged="docker rmi $(docker images | grep '^<none>' | awk '{print $3}')"
+# alias docker-clean-untagged='docker images | grep '\''<none>'\'' | grep -P '\'' [1234567890abcdef] { 12 } '\'' -o | xargs -L1 docker rmi '
 alias docker-kill-all-containers='docker ps -a | grep -v CONTAINER | awk '\'' { print $1 } '\'' | xargs docker kill '
 alias docker-remove-all-containers='docker ps -a | grep -v CONTAINER | awk '\'' { print $1 } '\'' | xargs docker rm '
-alias docker-remove-all-images='docker rmi $(docker images -q)'
+# alias docker-remove-all-images='docker rmi $(docker images -q)'
 #
 #
 #
@@ -146,7 +146,8 @@ alias pa-output-sinks="pacmd list-sinks | grep -e 'name:' -e 'index'"
 #
 # Include custom aliases#
 #
-[[ -f ~/.aliases.local ]] && source ~/.aliases.local
 alias prettyjson='python -m json.tool'
 alias lockit='i3lock -t -i ~/.i3/3monitor.png'
-alias jekyllserve="bundle exec jekyll serve"
+alias jekyllserve='bundle exec jekyll serve'
+[[ -f ~/.aliases.local ]] && source ~/.aliases.local
+
