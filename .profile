@@ -1,5 +1,5 @@
 # use vim as the visual editor
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR=$VISUAL
 # add golang if exists
 if [ -f ~/go ]; then
