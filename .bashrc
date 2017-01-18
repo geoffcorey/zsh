@@ -10,6 +10,10 @@ if [ -f ~/.profile ]; then
 	. ~/.profile
 fi
 
+# Source local .aliases
+if [ -f ~/.aliases ]; then
+	. ~/.aliases
+fi
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
