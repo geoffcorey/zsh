@@ -22,3 +22,12 @@ fi
 export NVM_DIR="/home/gwcorey/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+# Git prompt
+if [ -d ~/.bash-git-prompt ]; then
+  echo "bash-git-prompt installed"
+else
+  git clone https://github.com/magicmonty/bash-git-prompt.git ~/.bash-git-prompt --depth=1
+fi
+GIT_PROMPT_THEME=Single_line
+GIT_PROMPT_ONLY_IN_REPO=1
+source ~/.bash-git-prompt/gitprompt.sh
