@@ -27,4 +27,12 @@ if [[ `uname` == "Linux" ]]; then
   export LS_OPTS='--color=auto'
 fi
 alias ls='ls ${LS_OPTS}'
-work-monitors
+#work-monitors
+
+export PATH="$HOME/.cargo/bin:$PATH"
+# Source .bashrc
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+# Source global definitions
+echo "profile"

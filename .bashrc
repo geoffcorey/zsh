@@ -1,25 +1,36 @@
 # .bashrc
 
-# Source global definitions
+
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
+# Source local .profile
+# if [ -f ~/.profile ]; then
+	# . ~/.profile
+# fi
 
 # Source local .profile
-if [ -f ~/.profile ]; then
-	. ~/.profile
+if [ -f ~/.bashrc.local ]; then
+	. ~/.bashrc.local
 fi
 
 # Source local .aliases
 if [ -f ~/.aliases ]; then
 	. ~/.aliases
 fi
+
+# Markdown previewer
+if [ -f ~/.cargo/env ]; then
+  . ~/.cargo/env
+fi
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
 
-export NVM_DIR="/home/gwcorey/.nvm"
+export GOPATH=~/
+export PATH=$PATH:$GOPATH/bin
+export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
 # Git prompt
@@ -31,3 +42,4 @@ fi
 GIT_PROMPT_THEME=Single_line
 GIT_PROMPT_ONLY_IN_REPO=1
 source ~/.bash-git-prompt/gitprompt.sh
+echo "bashrc"
