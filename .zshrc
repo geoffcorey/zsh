@@ -83,3 +83,8 @@ setopt EXTENDED_GLOB
 # Local config
 [[ -f ~/.profile.local ]] && source ~/.profile.local
 
+
+### Added by the Bluemix CLI
+source /usr/local/Bluemix/bx/zsh_autocomplete
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -43,3 +43,9 @@ GIT_PROMPT_THEME=Single_line
 GIT_PROMPT_ONLY_IN_REPO=1
 source ~/.bash-git-prompt/gitprompt.sh
 echo "bashrc"
+
+### Added by the Bluemix CLI
+source /usr/local/Bluemix/bx/bash_autocomplete
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
