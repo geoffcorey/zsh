@@ -151,3 +151,4 @@ alias lockit='i3lock -t -i ~/.i3/tile.png'
 alias jekyllserve='bundle exec jekyll serve'
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
 
+alias killpc="sudo pkill -9 parentalcontrolsd"
