@@ -44,7 +44,7 @@ alias D='cd ~/Downloads'
 #
 alias gitgraph="git log --graph --simplify-by-decoration --pretty=format:'%d' --all"
 #
-# Docker
+# Docker/Kubernetes
 #
 # function __docker-shell { docker exec -it $1 bash }
 # alias docker-shell='__docker-shell'
@@ -53,6 +53,7 @@ alias gitgraph="git log --graph --simplify-by-decoration --pretty=format:'%d' --
 alias docker-kill-all-containers='docker ps -a | grep -v CONTAINER | awk '\'' { print $1 } '\'' | xargs docker kill '
 alias docker-remove-all-containers='docker ps -a | grep -v CONTAINER | awk '\'' { print $1 } '\'' | xargs docker rm '
 # alias docker-remove-all-images='docker rmi $(docker images -q)'
+alias kubedashtoken='kubectl get secrets -n kube-system | grep default-token | cut -d " " -f 1 | xargs kubectl get secrets -n kube-system -o yaml | grep "token:" | cut -d " " -f 4 | base64 -D && echo ""'
 #
 #
 #
@@ -111,6 +112,7 @@ alias kT='killall transmission-daemon'
 alias todo='$EDITOR ~/.todo'
 alias httpserve='python -m SimpleHTTPServer'
 alias filemgr='nautilus --no-desktop'
+alias vimgo='nvim -u ~/.vimrc.go'
 #
 # News and Music
 #
