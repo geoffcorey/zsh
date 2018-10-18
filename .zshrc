@@ -1,74 +1,5 @@
-# load our own completion functions
-fpath=(~/.zsh/completion $fpath)
 
-# completion
-autoload -U compinit
-compinit
-
-for function in ~/.zsh/functions/*; do
-  source $function
-done
-
-# automatically enter directories without cd
-setopt auto_cd
-
-# vi mode
-bindkey -v
-bindkey "^F" vi-cmd-mode
-bindkey jj vi-cmd-mode
-
-# use incremental search
-bindkey "^R" history-incremental-search-backward
-
-# add some readline keys back
-bindkey "^A" beginning-of-line
-bindkey "^E" end-of-line
-
-# handy keybindings
-bindkey "^P" history-search-backward
-bindkey "^Y" accept-and-hold
-bindkey "^N" insert-last-word
-bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
-
-# expand functions in the prompt
-setopt prompt_subst
-
-# prompt
-export PS1='[${SSH_CONNECTION+"%n@%m:"}%~] '
-# GIT PROMPT
-if [[ ! -f ~/src/github.com/olivierverdier/zsh-git-prompt/zshrc.sh ]]; then
-  mkdir -p ~/src/github.com/olivierverdier/zsh-git-prompt
-  git clone git@github.com:olivierverdier/zsh-git-prompt.git ~/src/github.com/olivierverdier/zsh-git-prompt
-fi
-source ~/src/github.com/olivierverdier/zsh-git-prompt/zshrc.sh
-PROMPT='%B%m%~%b$(git_super_status) %# '
-# ignore duplicate history entries
-setopt hist_ignore_dups
-
-# keep TONS of history
-export HISTSIZE=4096
-export HISTFILE="$HOME/.history"
-export SAVEHIST=$HISTSIZE
-
-# look for ey config in project dirs
-export EYRC=./.eyrc
-
-# automatically pushd
-setopt auto_pushd
-export dirstacksize=5
-
-# awesome cd movements from zshkit
-setopt AUTOCD
-setopt AUTOPUSHD PUSHDMINUS PUSHDSILENT PUSHDTOHOME
-setopt cdablevars
-
-# Try to correct command line spelling
-setopt CORRECT CORRECT_ALL
-
-# Enable extended globbing
-setopt EXTENDED_GLOB
-
-# Node.js nvm 
+# Node.js nvm
 [[ -d ~/.nvm ]] && source ~/.nvm/nvm.sh
 
 # External IP
@@ -78,16 +9,59 @@ setopt EXTENDED_GLOB
 [[ -f ~/.aliases ]] && source ~/.aliases
 
 # profile paths
-[[ -f ~/.profile ]] && source ~/.profile
+#[[ -f ~/.profile ]] && source ~/.profile
 
 # Local config
 [[ -f ~/.profile.local ]] && source ~/.profile.local
+[[ -f ~/.bashrc.local ]] && source ~/.bashrc.local
 
 
 ### Added by the Bluemix CLI
-source /usr/local/Bluemix/bx/zsh_autocomplete
+source /usr/local/ibmcloud/autocomplete/zsh_autocomplete
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+#[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+#export PATH="$PATH:$HOME/.rvm/bin"
+#
+# Customise the Powerlevel9k prompts
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
+  #custom_medium custom_freecodecamp dir vcs newline status
+  dir vcs newline status
+)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+
+# Add the custom Medium M icon prompt segment
+#POWERLEVEL9K_CUSTOM_MEDIUM="echo -n $'\uF859'"
+#POWERLEVEL9K_CUSTOM_MEDIUM_FOREGROUND="black"
+#POWERLEVEL9K_CUSTOM_MEDIUM_BACKGROUND="white"
+
+# Add the custom freeCodeCamp prompt segment
+#POWERLEVEL9K_CUSTOM_FREECODECAMP="echo -n $'\uE242' freeCodeCamp"
+#POWERLEVEL9K_CUSTOM_FREECODECAMP_FOREGROUND="white"
+#POWERLEVEL9K_CUSTOM_FREECODECAMP_BACKGROUND="cyan"
+
+# Load Nerd Fonts with Powerlevel9k theme for Zsh
+POWERLEVEL9K_MODE='nerdfont-complete'
+# Set a color for iTerm2 tab title background using rgb values
+function title_background_color {
+  echo -ne "\033]6;1;bg;red;brightness;$ITERM2_TITLE_BACKGROUND_RED\a"
+  echo -ne "\033]6;1;bg;green;brightness;$ITERM2_TITLE_BACKGROUND_GREEN\a"
+  echo -ne "\033]6;1;bg;blue;brightness;$ITERM2_TITLE_BACKGROUND_BLUE\a"
+}
+
+ITERM2_TITLE_BACKGROUND_RED="18"
+ITERM2_TITLE_BACKGROUND_GREEN="26"
+ITERM2_TITLE_BACKGROUND_BLUE="33"
+
+title_background_color
+
+# Set iTerm2 tab title text
+function title_text {
+    echo -ne "\033]0;"$*"\007"
+}
+
+title_text zsh
+
+source ~/powerlevel9k/powerlevel9k.zsh-theme

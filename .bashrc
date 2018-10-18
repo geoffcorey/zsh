@@ -44,7 +44,7 @@ source ~/.bash-git-prompt/gitprompt.sh
 echo "bashrc"
 
 ### Added by the Bluemix CLI
-source /usr/local/Bluemix/bx/bash_autocomplete
+source /usr/local/ibmcloud/autocomplete/bash_autocomplete
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
