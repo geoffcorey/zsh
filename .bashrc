@@ -59,3 +59,6 @@ else
 	curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
   . ~/.git-completion.bash
 fi
+if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+ . /usr/local/etc/bash_completion.d/git-completion.bash
+fi
