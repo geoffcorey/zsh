@@ -65,3 +65,6 @@ function title_text {
 title_text zsh
 
 source ~/powerlevel9k/powerlevel9k.zsh-theme
+
+# added by travis gem
+[ -f /Users/gwcorey@us.ibm.com/.travis/travis.sh ] && source /Users/gwcorey@us.ibm.com/.travis/travis.sh

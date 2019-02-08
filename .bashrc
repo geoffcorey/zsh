@@ -22,6 +22,11 @@ fi
 if [ -f ~/.cargo/env ]; then
   . ~/.cargo/env
 fi
+
+# McFly
+if [ -f $(brew --prefix)/opt/mcfly/mcfly.bash ]; then
+. $(brew --prefix)/opt/mcfly/mcfly.bash
+fi
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
@@ -62,3 +67,6 @@ fi
 if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
  . /usr/local/etc/bash_completion.d/git-completion.bash
 fi
+
+# added by travis gem
+[ -f /Users/gwcorey@us.ibm.com/.travis/travis.sh ] && source /Users/gwcorey@us.ibm.com/.travis/travis.sh
