@@ -33,7 +33,7 @@ fi
 # User specific aliases and functions
 
 export GOPATH=~/
-export PATH=$PATH:$GOPATH/bin
+export PATH=$PATH:$GOPATH/bin:~/src/github.com/razee-io/Kube-cloud-scripts/bin
 export NVM_DIR="~/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 

@@ -54,6 +54,7 @@ alias docker-kill-all-containers='docker ps -a | grep -v CONTAINER | awk '\'' { 
 alias docker-remove-all-containers='docker ps -a | grep -v CONTAINER | awk '\'' { print $1 } '\'' | xargs docker rm '
 # alias docker-remove-all-images='docker rmi $(docker images -q)'
 alias kubedashtoken='kubectl get secrets -n kube-system | grep default-token | cut -d " " -f 1 | xargs kubectl get secrets -n kube-system -o yaml | grep "token:" | cut -d " " -f 4 | base64 -D && echo ""'
+alias kc=kubectl
 #
 #
 #
@@ -74,7 +75,7 @@ alias dumpmongo="sudo tcpdump -nnXSs 0 ' port 27017 '"
 alias ngrep="sudo ngrep -l -q -d eth0 \"^GET |^POST \" tcp and port 80"
 alias ports='netstat -tulanp'
 #
-# iptables 
+# iptables
 #
 alias ipt='sudo /sbin/iptables'
 alias iptlist='sudo /sbin/iptables -L -n -v --line-numbers'
@@ -154,3 +155,4 @@ alias jekyllserve='bundle exec jekyll serve'
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
 
 alias killpc="sudo pkill -9 parentalcontrolsd"
+alias cleanMeteor="git checkout .meteor/packages .meteor/versions"
