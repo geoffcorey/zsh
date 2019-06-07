@@ -114,6 +114,7 @@ alias todo='$EDITOR ~/.todo'
 alias httpserve='python -m SimpleHTTPServer'
 alias filemgr='nautilus --no-desktop'
 alias vimgo='nvim -u ~/.vimrc.go'
+alias weather='curl http://wttr.in/RALEIGH,NC'
 #
 # News and Music
 #
@@ -156,3 +157,5 @@ alias jekyllserve='bundle exec jekyll serve'
 
 alias killpc="sudo pkill -9 parentalcontrolsd"
 alias cleanMeteor="git checkout .meteor/packages .meteor/versions"
+# OS/X
+alias osxsoundreset="sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`"

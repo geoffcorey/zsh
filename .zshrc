@@ -1,4 +1,16 @@
-
+## History file configuration
+[ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
+HISTSIZE=50000
+SAVEHIST=10000
+bindkey -v
+## History command configuration
+setopt extended_history       # record timestamp of command in HISTFILE
+setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_dups       # ignore duplicated commands history list
+setopt hist_ignore_space      # ignore commands that start with space
+setopt hist_verify            # show command with history expansion to user before running it
+setopt inc_append_history     # add commands to HISTFILE in order of execution
+setopt share_history # share command history data
 # Node.js nvm
 [[ -d ~/.nvm ]] && source ~/.nvm/nvm.sh
 
@@ -27,10 +39,13 @@ source /usr/local/ibmcloud/autocomplete/zsh_autocomplete
 # Customise the Powerlevel9k prompts
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
   #custom_medium custom_freecodecamp dir vcs newline status
-  dir vcs newline status
+  custom_kubeconfig dir vcs newline status
 )
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_CUSTOM_KUBECONFIG="[[ ${KUBECONFIG} ]] && grep -a -m 1 -h -r name ${KUBECONFIG} | cut -d ":" -f 2"
+POWERLEVEL9K_CUSTOM_KUBECONFIG_FOREGROUND="white"
+POWERLEVEL9K_CUSTOM_KUBECONFIG_BACKGROUND="cyan"
 
 # Add the custom Medium M icon prompt segment
 #POWERLEVEL9K_CUSTOM_MEDIUM="echo -n $'\uF859'"
