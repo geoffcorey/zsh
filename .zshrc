@@ -32,6 +32,11 @@ setopt share_history # share command history data
 source /usr/local/ibmcloud/autocomplete/zsh_autocomplete
 
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+kube_cluster () {
+	if (( ${+KUBECONFIG} )); then
+        	grep -a -m 1 -h -r name ${KUBECONFIG} | cut -d ":" -f 2
+	fi
+}
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 #export PATH="$PATH:$HOME/.rvm/bin"
@@ -43,7 +48,7 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
 )
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
-POWERLEVEL9K_CUSTOM_KUBECONFIG="[[ ${KUBECONFIG} ]] && grep -a -m 1 -h -r name ${KUBECONFIG} | cut -d ":" -f 2"
+POWERLEVEL9K_CUSTOM_KUBECONFIG=kube_cluster
 POWERLEVEL9K_CUSTOM_KUBECONFIG_FOREGROUND="white"
 POWERLEVEL9K_CUSTOM_KUBECONFIG_BACKGROUND="cyan"
 
