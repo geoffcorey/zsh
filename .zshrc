@@ -29,7 +29,7 @@ setopt share_history # share command history data
 
 
 ### Added by the Bluemix CLI
-source /usr/local/ibmcloud/autocomplete/zsh_autocomplete
+[[ -f /usr/local/ibmcloud/autocomplete/zsh_autocomplete ]] && source /usr/local/ibmcloud/autocomplete/zsh_autocomplete
 
 #[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 kube_cluster () {
