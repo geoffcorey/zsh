@@ -23,10 +23,6 @@ if [ -f ~/.cargo/env ]; then
   . ~/.cargo/env
 fi
 
-# McFly
-if [ -f $(brew --prefix)/opt/mcfly/mcfly.bash ]; then
-. $(brew --prefix)/opt/mcfly/mcfly.bash
-fi
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
@@ -49,7 +45,7 @@ source ~/.bash-git-prompt/gitprompt.sh
 echo "bashrc"
 
 ### Added by the Bluemix CLI
-source /usr/local/ibmcloud/autocomplete/bash_autocomplete
+[ -f /usr/local/ibmcloud/autocomplete/bash_autocomplete ] && source /usr/local/ibmcloud/autocomplete/bash_autocomplete
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
