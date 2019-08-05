@@ -157,5 +157,3 @@ alias jekyllserve='bundle exec jekyll serve'
 
 alias killpc="sudo pkill -9 parentalcontrolsd"
 alias cleanMeteor="git checkout .meteor/packages .meteor/versions"
-# OS/X
-alias osxsoundreset="sudo kill -9 `ps ax|grep 'coreaudio[a-z]' | awk '{print $1}'`"

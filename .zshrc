@@ -88,3 +88,4 @@ source ~/powerlevel9k/powerlevel9k.zsh-theme
 
 # added by travis gem
 [ -f /Users/gwcorey@us.ibm.com/.travis/travis.sh ] && source /Users/gwcorey@us.ibm.com/.travis/travis.sh
+export PATH="/usr/local/opt/mongodb@3.6/bin:$PATH"
