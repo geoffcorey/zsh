@@ -12,10 +12,12 @@ setopt hist_verify            # show command with history expansion to user befo
 setopt inc_append_history     # add commands to HISTFILE in order of execution
 setopt share_history # share command history data
 # Node.js nvm
-[[ -d ~/.nvm ]] && source ~/.nvm/nvm.sh
+export NVM_DIR="$HOME/.nvm"
+[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"
 
-# External IP
-~/bin/external-ip -r
+# Externa lIP
+#~/bin/external-ip -r
 
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases
@@ -43,8 +45,8 @@ kube_cluster () {
 #
 # Customise the Powerlevel9k prompts
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
-  #custom_medium custom_freecodecamp dir vcs newline status
-  custom_kubeconfig dir vcs newline status
+  #custom_medium custom_freecodecamp dir vcs newline status custom_kubeconfig
+  time dir vcs newline status
 )
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
