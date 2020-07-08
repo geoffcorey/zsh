@@ -3,10 +3,6 @@
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
-# Source local .profile
-# if [ -f ~/.profile ]; then
-	# . ~/.profile
-# fi
 
 # Source local .profile
 if [ -f ~/.bashrc.local ]; then
@@ -28,8 +24,6 @@ fi
 
 # User specific aliases and functions
 
-export GOPATH=~/
-export PATH=$PATH:$GOPATH/bin:~/src/github.com/razee-io/Kube-cloud-scripts/bin
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
@@ -45,8 +39,6 @@ GIT_PROMPT_ONLY_IN_REPO=1
 source ~/.bash-git-prompt/gitprompt.sh
 echo "bashrc"
 
-### Added by the Bluemix CLI
-[ -f /usr/local/ibmcloud/autocomplete/bash_autocomplete ] && source /usr/local/ibmcloud/autocomplete/bash_autocomplete
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
