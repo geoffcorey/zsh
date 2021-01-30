@@ -157,3 +157,13 @@ alias jekyllserve='bundle exec jekyll serve'
 
 alias killpc="sudo pkill -9 parentalcontrolsd"
 alias cleanMeteor="git checkout .meteor/packages .meteor/versions"
+#
+# KB  pip install -U kb-manager
+#
+alias kbl="kb list"
+alias kbe="kb edit --id"
+alias kba="kb add"
+alias kbv="kb view --id"
+alias kbd="kb delete --id"
+alias kbg="kb grep"
+alias kbt="kb list --tags"
