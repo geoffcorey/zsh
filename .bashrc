@@ -56,3 +56,5 @@ fi
 if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
  . /usr/local/etc/bash_completion.d/git-completion.bash
 fi
+source <(npx --shell-auto-fallback bash)
+source ~/.kb_alias
