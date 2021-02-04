@@ -23,10 +23,9 @@ fi
 # export SYSTEMD_PAGER=
 
 # User specific aliases and functions
-
 export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 # Git prompt
 if [ -d ~/.bash-git-prompt ]; then
@@ -44,7 +43,7 @@ echo "bashrc"
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+export PATH="$PATH:$HOME/bin"
 
 # GIT completion
 if [ -f ~/.git-completion.bash ]; then
